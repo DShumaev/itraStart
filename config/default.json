@@ -1,0 +1,10 @@
+{
+  "db": {
+    "dialect": "postgres",
+    "database": "itraLearningProject",
+    "username": "postgres",
+    "password": "postgres",
+    "host": "localhost",
+    "port": ""
+  }
+}

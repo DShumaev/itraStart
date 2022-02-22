@@ -4,8 +4,8 @@
   ],
   "extends": [
     "airbnb-base",
-    "plugin:prettier/recommended",
-    "prettier"
+    "prettier",
+    "plugin:prettier/recommended"
   ],
   "env": {
     "es6": true,
@@ -13,6 +13,9 @@
     "node": true
   },
   "rules": {
-
+    "prettier/prettier": "error",
+    // turns off two ESLint core rules that unfortunately are problematic with prettier plugin – see the next section.
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off"
   }
 }
