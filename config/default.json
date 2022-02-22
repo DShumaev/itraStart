@@ -1,5 +1,24 @@
 {
-  "db": {
+  "express": {
+    "port": 5000
+  },
+  "development": {
+    "dialect": "postgres",
+    "database": "itraLearningProject",
+    "username": "postgres",
+    "password": "postgres",
+    "host": "localhost",
+    "port": ""
+  },
+  "test": {
+    "dialect": "postgres",
+    "database": "itraLearningProject",
+    "username": "postgres",
+    "password": "postgres",
+    "host": "localhost",
+    "port": ""
+  },
+  "production": {
     "dialect": "postgres",
     "database": "itraLearningProject",
     "username": "postgres",

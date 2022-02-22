@@ -1,8 +1,9 @@
 const express = require("express");
+const config = require("config");
 const mainRouter = require("./routers/mainRouter");
 const errorHandler = require("./middleware/index");
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || config.get("express.port");
 const app = express();
 
 app.use(express.json());
