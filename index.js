@@ -2,6 +2,7 @@ const express = require("express");
 const config = require("config");
 const mainRouter = require("./routers/mainRouter");
 const errorHandler = require("./middleware/index");
+const userRouter = require("./routers/userRouter");
 
 const PORT = process.env.PORT || config.get("express.port");
 const app = express();

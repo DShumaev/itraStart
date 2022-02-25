@@ -2,6 +2,7 @@
   "express": {
     "port": 5000
   },
+  "hashPswdSalt": 15,
   "development": {
     "dialect": "postgres",
     "database": "itraLearningProject",

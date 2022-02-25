@@ -2,12 +2,12 @@ const Sequelize = require("sequelize");
 const config = require("config");
 
 const sequelize = new Sequelize(
-  config.get("db.database"),
-  config.get("db.username"),
-  config.get("db.password"),
+  config.get("development.database"),
+  config.get("development.username"),
+  config.get("development.password"),
   {
-    host: config.get("db.host"),
-    dialect: config.get("db.dialect"),
+    host: config.get("development.host"),
+    dialect: config.get("development.dialect"),
   }
 );
 
