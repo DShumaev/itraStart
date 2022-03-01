@@ -7,8 +7,9 @@ class UserController {
       if (!users) {
         res.status(200).json({
           status: "error",
-          message: "user didn't created yet",
+          message: "user didn't creat yet",
         });
+        return;
       }
       res.status(200).json({
         users,
@@ -29,6 +30,7 @@ class UserController {
           status: "error",
           message: "user has not been created",
         });
+        return;
       }
       res.status(200).json({
         status: "success",
@@ -46,9 +48,10 @@ class UserController {
       const user = await userService.getUser(req.params.id);
       if (!user) {
         res.status(200).json({
-          status: "success",
+          status: "error",
           message: `user with ID = ${req.params.id} is not found`,
         });
+        return;
       }
       res.status(200).json({
         user,
@@ -91,6 +94,7 @@ class UserController {
           status: "success",
           message: "user deleted successfully",
         });
+        return;
       } else {
         res.status(200).json({
           status: "error",
