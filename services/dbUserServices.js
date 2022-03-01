@@ -91,7 +91,7 @@ class UserServices {
         return false;
       }
       return userData.dataValues;
-    } catch {
+    } catch (e) {
       return false;
     }
   }
@@ -115,6 +115,7 @@ class UserServices {
       if (countUserFields !== Object.length(this.userDbField)) {
         return false;
       }
+
       const updatedData = await this.userModel.update(newUserData, {
         where: { id },
       });
@@ -128,13 +129,17 @@ class UserServices {
   }
 
   async deleteUser(id) {
-    const isUserDelete = await this.userModel.destroy({
-      where: { id },
-    });
+    try {
+      const isUserDelete = await this.userModel.destroy({
+        where: { id },
+      });
 
-    if (isUserDelete) {
-      return true;
-    } else {
+      if (isUserDelete) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch {
       return false;
     }
   }
