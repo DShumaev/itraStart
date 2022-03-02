@@ -1,54 +1,11 @@
-const Sequelize = require("sequelize");
-const sequelize = require("../../models/index");
-const getUserModel = require("../../models/user");
-const config = require("config");
-const bcrypt = require("bcrypt");
 const dbUserServices = require("../../services/dbUserServices");
-
-const userModel = getUserModel(sequelize, Sequelize.DataTypes);
-
-// tests of users service (communication with DB)
-const testUserValue = {
-  userName: "Testik",
-  firstName: "Test",
-  lastName: "Testovich",
-  email: "test@mail.ru",
-  password: "testpassword",
-};
-
-const testUserUpdatedValue = {
-  userName: "Testikovich",
-  firstName: "Teston",
-  lastName: "Testovichovski",
-  email: "testing@mail.ru",
-  password: "testpassword12345",
-};
-
-const testUserUpdatedIncorrectValue = {
-  user: "Testikovich",
-  firstName: "Teston",
-  lastName: "Testovichovski",
-  email: "testing@mail.ru",
-  password: "testpassword12345",
-};
-
-async function createTestUser(userData) {
-  const createdUser = await userModel.create({
-    userName: userData.userName,
-    firstName: userData.firstName,
-    lastName: userData.lastName,
-    email: userData.email,
-    password: await bcrypt.hash(userData.password, config.get("hashPswdSalt")),
-  });
-
-  return createdUser.dataValues.id;
-}
-
-async function deleteTestUser(id) {
-  await userModel.destroy({
-    where: { id },
-  });
-}
+const {
+  createTestUser,
+  deleteTestUser,
+  testUserValue,
+  testUserUpdatedValue,
+  testUserUpdatedIncorrectValue,
+} = require("../utils");
 
 /*describe("test getAllUser method", () => {
   beforeEach(() => {
