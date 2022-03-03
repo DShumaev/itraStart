@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Controller = require("../conntrollers/controller");
+const Controller = require("../controllers/controller");
 
 router.get("/hello", Controller.sendHelloMessage);
 
