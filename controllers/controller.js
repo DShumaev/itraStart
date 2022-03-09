@@ -1,9 +1,9 @@
 class Controller {
-  sendHelloMessage(req, res) {
+  static sendHelloMessage(req, res) {
     res.json({
       message: "Hello my dear friend!",
     });
   }
 }
 
-module.exports = new Controller();
+module.exports = Controller;

@@ -12,7 +12,5 @@
     "browser": true,
     "node": true
   },
-  "rules": {
-
-  }
+  "rules": {}
 }
