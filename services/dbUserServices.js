@@ -15,7 +15,7 @@ class UserServices {
       return false;
     }
     const users = [];
-    usersData.forEach((userData, index) => {
+    usersData.forEach((userData) => {
       users.push(userData.dataValues);
     });
 
@@ -51,12 +51,42 @@ class UserServices {
       return false;
     }
 
-    return true;
+    return createdUser.dataValues.id;
   }
 
-  async getUser(id) {
+  async getUserById(id) {
     try {
-      const userData = await this.userModel.findOne({ where: { id } });
+      const userData = await this.userModel.findOne({
+        where: { id },
+      });
+      if (!(userData && userData.dataValues)) {
+        return false;
+      }
+      return userData.dataValues;
+    } catch {
+      return false;
+    }
+  }
+
+  async getUserByEmail({ email }) {
+    try {
+      const userData = await this.userModel.findOne({
+        where: { email },
+      });
+      if (!(userData && userData.dataValues)) {
+        return false;
+      }
+      return userData.dataValues;
+    } catch {
+      return false;
+    }
+  }
+
+  async getUserByUserName({ userName }) {
+    try {
+      const userData = await this.userModel.findOne({
+        where: { userName },
+      });
       if (!(userData && userData.dataValues)) {
         return false;
       }
@@ -82,7 +112,7 @@ class UserServices {
         return (counter += 1);
       }, 0);
 
-      if (!(countUserFields > 0)) {
+      if (countUserFields !== Object.length(this.userDbField)) {
         return false;
       }
       const updatedData = await this.userModel.update(newUserData, {
