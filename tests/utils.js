@@ -11,7 +11,7 @@ const testUserValue = {
   firstName: "Test",
   lastName: "Testovich",
   email: "test@mail.ru",
-  password: "testpassword",
+  password: "Testpassword0",
 };
 
 const testUserValue2 = {
@@ -19,7 +19,7 @@ const testUserValue2 = {
   firstName: "Test2",
   lastName: "Testovich2",
   email: "test2@mail.ru",
-  password: "testpassword2",
+  password: "Testpassword2",
 };
 
 const testUserUpdatedValue = {
@@ -27,7 +27,7 @@ const testUserUpdatedValue = {
   firstName: "Teston",
   lastName: "Testovichovski",
   email: "testing@mail.ru",
-  password: "testpassword12345",
+  password: "Testpassword12345",
 };
 
 const testUserIncorrectValue = {
@@ -35,7 +35,7 @@ const testUserIncorrectValue = {
   firstName: "Teston",
   lastName: "Testovichovski",
   email: "testing@mail.ru",
-  password: "testpassword12345",
+  password: "Testpassword12345",
 };
 
 const testUserUpdatedIncorrectValue = {
@@ -43,7 +43,7 @@ const testUserUpdatedIncorrectValue = {
   firstName: "Teston",
   lastName: "Testovichovski",
   email: "testing@mail.ru",
-  password: "testpassword12345",
+  password: "Testpassword12345",
 };
 
 async function createTestUser(userData) {
