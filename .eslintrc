@@ -12,5 +12,10 @@
     "browser": true,
     "node": true
   },
-  "rules": {}
+  "rules": {
+    "prettier/prettier": "error",
+    // turns off two ESLint core rules that unfortunately are problematic with prettier plugin – see the next section.
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off"
+  }
 }
