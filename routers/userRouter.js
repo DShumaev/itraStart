@@ -10,12 +10,7 @@ router.get("/", validator(userValidSchema.get), userController.getAllUsers);
 
 router.get("/:id", validator(userValidSchema.get), userController.getUser);
 
-router.post(
-  "/",
-  authValidator(),
-  validator(userValidSchema.post),
-  userController.addNewUser
-);
+router.post("/", validator(userValidSchema.post), userController.addNewUser);
 
 router.put(
   "/:id",

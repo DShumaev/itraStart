@@ -1,8 +1,8 @@
 const Sequelize = require("sequelize");
-const sequelize = require("../models/index");
-const getUserModel = require("../models/user");
 const config = require("config");
 const bcrypt = require("bcrypt");
+const sequelize = require("../models/index");
+const getUserModel = require("../models/user");
 
 const userModel = getUserModel(sequelize, Sequelize.DataTypes);
 

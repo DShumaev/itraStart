@@ -7,7 +7,7 @@ const {
   testUserUpdatedIncorrectValue,
 } = require("../utils");
 
-/*describe("test getAllUser method", () => {
+/* describe("test getAllUser method", () => {
   beforeEach(() => {
     createTestUser(testUserValue);
   });
@@ -18,7 +18,7 @@ const {
   test("", () => {});
   test("", () => {});
   test("error:", () => {});
-});*/
+}); */
 
 describe("test getUser method", () => {
   beforeAll(async () => {

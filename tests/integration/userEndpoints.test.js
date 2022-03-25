@@ -61,7 +61,7 @@ describe("GET /user/all", () => {
     expect(response.body.status).toEqual("error");
     expect(response.body).toHaveProperty("message");
     expect(response.body.message).toContain("user didn't creat yet");
-  });*/
+  }); */
 });
 
 describe("POST /user/create", () => {
@@ -84,11 +84,11 @@ describe("POST /user/create", () => {
       .send(JSON.stringify(testUserIncorrectValue))
       .set("Content-Type", "application/json")
       .expect(httpStatus.BAD_REQUEST);
-    //.expect("Content-Type", /json/);
-    //expect(response.body).toHaveProperty("message");
-    //expect(response.body.message).toContain("user has not been created");
-    //expect(response.body).toHaveProperty("status");
-    //expect(response.body.status).toEqual("error");
+    // .expect("Content-Type", /json/);
+    // expect(response.body).toHaveProperty("message");
+    // expect(response.body.message).toContain("user has not been created");
+    // expect(response.body).toHaveProperty("status");
+    // expect(response.body.status).toEqual("error");
   });
 });
 
@@ -119,10 +119,10 @@ describe("PUT /user/create", () => {
       .send(JSON.stringify(testUserIncorrectValue))
       .set("Content-Type", "application/json")
       .expect(httpStatus.BAD_REQUEST);
-    //.expect("Content-Type", /json/);
-    //expect(response.body).toHaveProperty("message");
-    //expect(response.body).toHaveProperty("status");
-    //expect(response.body.status).toEqual("error");
+    // .expect("Content-Type", /json/);
+    // expect(response.body).toHaveProperty("message");
+    // expect(response.body).toHaveProperty("status");
+    // expect(response.body.status).toEqual("error");
   });
 });
 

@@ -95,12 +95,11 @@ class UserController {
           message: "user deleted successfully",
         });
         return;
-      } else {
-        res.status(200).json({
-          status: "error",
-          message: "have a problem with deleting this user",
-        });
       }
+      res.status(200).json({
+        status: "error",
+        message: "have a problem with deleting this user",
+      });
     } catch (e) {
       res.status(500).json({
         message: "unexpected server error",
